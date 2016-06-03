@@ -69,12 +69,12 @@ Game_Action.prototype.executeDamage = function(target, value) {
         var skill = this.item();	//スキルを取得
 
         /* 与ダメージをＭＰに変換 */
-        if(a.abm != 0 || skill.meta.absorb_MP != 0){
+        if(a.abm != 0 || skill.meta.absorb_MP){
             a.gainMp(parseInt(value * (a.abm + (skill.meta.absorb_MP || 0)) / 100));
         }
 
         /* 与ダメージをＨＰに変換 */
-        if(a.abh != 0 || skill.meta.absorb_HP != 0){
+        if(a.abh != 0 || skill.meta.absorb_HP){
             a.gainHp(parseInt(value * (a.abh + (skill.meta.absorb_HP || 0)) / 100));
         }
     
